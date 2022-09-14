@@ -8,6 +8,20 @@ TITLE: Let's build a CRUD app with Ruby on Rails and React.js
 TIMING: 28:53 - 30:00
 Things you may want to cover:
 
+What resources helped in errors: 
+https://www.appsloveworld.com/ruby/100/32/getting-actioncontrollerroutingerror-no-route-matches-options-users-when
+... 
+
+Adding this to routes.rb
+  resources :users do
+    collection { post :create_user , via: :options  }
+    # via: :options ?
+  end
+
+   Remove the param plural. Params (no) param (yes) in routes.rb
+    resources :airlines, param: :slug
+...
+
 * Ruby version
 
 * System dependencies
