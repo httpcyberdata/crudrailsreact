@@ -5,6 +5,7 @@ module Api
                 airlines = Airline.all
                 render json: AirlineSerializer.new(airlines, options).serialized_json
             end
+
             
             def show 
                 Airline.find_by(slug: params[:slug])
@@ -14,12 +15,14 @@ module Api
             def create 
                 airline = Airline.new(airline_params)
 
-                if airline.save 
-                    render json: AirlineSerializer.new(airline).serialized_json
-                else 
-                    render json: { error: airline.errors.messages }, status: 422
+                    if airline.save 
+                        render json: AirlineSerializer.new(airline).serialized_json
+                    else 
+                        render json: { error: airline.errors.messages }, status: 422
+                end
+
             end
-        end
+
             def update
                 airline = Airline.find_by(slug: params[:slug])
             
@@ -27,8 +30,8 @@ module Api
                     render json: AirlineSerializer.new(airline, options).serialized_json
                 else 
                     render json: { error: airline.errors.messages }, status: 422
+                 end
             end
-        end
         
             def destroy
                 airline = Airline.find_by(slug: params[:slug])
@@ -37,8 +40,8 @@ module Api
                    head :no_content
                 else 
                     render json: { error: airline.errors.messages }, status: 422
-            end
-        end
+                 end
+             end
         
             private 
 
@@ -48,6 +51,8 @@ module Api
 
             def options 
                 @options ||= { include: %i[reviews]}
-        end 
+             end 
+        end
+
     end
 end
