@@ -1,6 +1,6 @@
 # CRUD React & Rails App
 
-URL TO TUTORIAL: https://www.youtube.com/watch?v=oyjzi837wME&list=PLvRl6k5LXGmn9DCz_9FiBwXI63fsGY3Ph&index=28&t=134s
+URL TO PT.2 TUTORIAL:https://www.youtube.com/watch?v=F0xErjOtJAQ
 TITLE: Let's build a CRUD app with Ruby on Rails and React.js 
 What resources helped in errors: 
 https://www.appsloveworld.com/ruby/100/32/getting-actioncontrollerroutingerror-no-route-matches-options-users-when
@@ -72,13 +72,16 @@ to
 
 
 ``` <%= javascript_pack_tag 'index' %>
+```
+______
+## Misc. Information
 
-
-* Ruby version 3.0.0
-* Rails version 7.0.4
-* System dependencies
+* Ruby version: 3.0.0
+* Rails version: 7.0.4
+* System dependencies:
   * 'fast_jsonapi' gem (no longer maintained) [fast_jsonapi](https://github.com/Netflix/fast_jsonapi)
-* Configuration
-* Database creation
+* Database creation:
   * Airlines Active Record
+    - string: name, string: image_url, string: slug.
   * Reviews Active Record
+    - string: title, string: description, integer: score
